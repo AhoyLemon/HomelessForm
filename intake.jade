@@ -1,4 +1,3 @@
--var siteTitle: "Homeless Form"
 doctype html
 html(lang="en")
   head
@@ -8,6 +7,18 @@ html(lang="en")
   body
     form
       .flex-form
-        +singleInput("text", "half", "Name of Youth", "clientName", "We need to know the youth's name")
-        +singleInput("number", "half", "Age", "clientAge")
-        +singleInput("date", "half", "Date", "clientDOB")
+        +singleInput("text", "large", "Name of Youth", "clientName", "We need to know the youth's name")
+        +singleInput("number", "small", "Age", "clientAge")
+        +singleInput("date", "medium", "Date", "clientDOB")
+        +singleInput("text", "large", "Guardian Name(s)", "GuardianName")
+        +singleInput("text", "medium", "Relationship To Youth", "GuardianRelationship")
+        +singleInput("tel", "medium", "Guardian Phone #", "GuardianPhone")
+        label.flex-single-check.medium
+          span Can we contact?
+          input(type="checkbox" name="GuardianContact" value="yes")
+          svg.checkbox(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32")
+            use.square(xlink:href="#Checkbox-Open")
+            use.selected(xlink:href="#Checkbox-Checked")
+        +singleInput("text", "large", "Name of Caller", "callerName")
+        +singleInput("text", "medium", "Caller's Relationship", "callerRelationship")
+        +singleInput("tel", "medium", "Caller Number", "callerNumber")

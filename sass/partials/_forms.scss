@@ -1,1 +1,35 @@
-.flex-form { @include flex-container(); max-width: 800px; margin-left: auto; margin-right: auto; }
+.flex-form { @include flex-container(); max-width: 800px; margin-left: auto; margin-right: auto;
+  > label { position: relative; min-height: 3em; border:1px solid $black;
+    > span { position: absolute; top:0; left:0; font-size:0.8em; font-weight: $bold; padding-top: 0.5em; padding-left: 0.5em; }
+  }
+  .required-mark { color:red; height: 1em; width: 1em; position:absolute; top:1em; right:1em; }
+  .half { @include flex-item(50%); }
+  
+  .small { @include flex-item(100px); }
+  .medium { @include flex-item(200px); }
+  .large { @include flex-item(300px); }
+  
+  select, input { background:transparent; border:0; position: absolute; top:0; right:0; bottom:0; left:0; width: 100%;
+    &:focus { background:$focus; }
+  }
+  
+  input {
+    &[type="text"], &[type="number"], &[type="date"], &[type="tel"] { font-family:$font; font-size:1.5em; padding: 1em 0.5em 0.5em 0.5em; display: block; }
+  }
+  
+  svg.radio { width:2em; height: 2em; display: inline-block; }
+  
+  input[type="radio"] { display: none;
+    
+  }
+  input[type="checkbox"] { display: none;
+    ~ svg.checkbox { width:1.5em; height: 1.5em; }
+    ~ svg.checkbox .selected { opacity: 0; }
+    &:checked ~ svg.checkbox .selected { opacity: 1; }
+  }
+}
+
+.flex-single-check { 
+  svg.checkbox { display: block; margin-left: auto; margin-right: auto; margin-top: 1.5em; }
+}
+
