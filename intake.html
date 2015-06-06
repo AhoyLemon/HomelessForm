@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" display="none">
+      <path id="Checkbox-Open" d="M32 32H0V0h32v32zM3.6 28.4h24.9V3.6H3.6v24.8z"></path>
+      <path id="Checkbox-Checked" d="M12.6 23.2l-7.7-7.7L7.4 13l5.2 5.1L23.7 7l2.6 2.5"></path>
+      <path id="Radio-Open" d="M15.9 31.8C7.2 31.8.1 24.7.1 16 .1 7.3 7.2.2 15.9.2 24.6.2 31.7 7.3 31.7 16c0 8.8-7.1 15.8-15.8 15.8zm0-28C9.2 3.8 3.7 9.3 3.7 16.1S9.2 28.4 16 28.4c6.8 0 12.3-5.5 12.3-12.3S22.7 3.8 15.9 3.8z"></path>
+      <circle id="Radio-Checked" cx="15.9" cy="16.1" r="8.1"></circle>
+      <path id="Field-Required" d="M14 28l.8-10.3-8.6 5.8c-.6.4-1.1.6-1.6.6s-.9-.2-1.3-.6-.6-.9-.6-1.6.4-1.2 1.3-1.6l9.7-4.6L4 11.1c-.9-.4-1.3-1-1.3-1.8 0-1.2.6-1.9 1.9-2 .4 0 .9.2 1.5.6l8.6 5.8L14 3.5c-.1-.6.1-1 .5-1.5.4-.4.8-.6 1.4-.6s1 .2 1.4.6c.4.4.5.9.5 1.5L17 13.8 25.6 8c.6-.4 1.1-.6 1.6-.6s.9.2 1.3.6c.3.4.5.9.5 1.6 0 .7-.4 1.2-1.3 1.6L18 15.8l9.7 4.6c.9.4 1.3.9 1.3 1.6s-.2 1.2-.6 1.6c-.4.4-.8.6-1.3.6s-1-.2-1.6-.6l-8.6-5.8.9 10.2c.1.6-.1 1.1-.5 1.5-.4.4-.8.6-1.4.6s-1-.2-1.4-.6c-.4-.4-.5-.9-.5-1.5z"></path>
+    </svg>
+    <link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet">
+    <link href="css/homeless.css" rel="stylesheet">
+    <title>Intake Form</title>
+  </head>
+  <body>
+    <form>
+      <div class="flex-form">
+            <label class="flex-input large"><span>Name of Youth</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="required-mark">
+                <use xlink:href="#Field-Required" class="required"></use>
+              </svg>
+              <input type="text" required title="We need to know the youth's name" name="clientName" data-parsley-trigger="change" class="full">
+            </label>
+            <label class="flex-input small"><span>Age</span>
+              <input type="text" name="clientAge" class="full">
+            </label>
+            <label class="flex-input medium"><span>Birthdate</span>
+              <input type="date" name="clientDOB" class="full">
+            </label>
+      </div>
+      <div class="flex-form">
+            <label class="flex-input large"><span>Guardian Name(s)</span>
+              <input type="text" name="GuardianName" class="full">
+            </label>
+            <label class="flex-input medium"><span>Relationship To Youth</span>
+              <input type="text" name="GuardianRelationship" class="full">
+            </label>
+            <label class="flex-input medium"><span>Guardian Phone #</span>
+              <input type="tel" name="GuardianPhone" class="full">
+            </label>
+        <label class="flex-single-check medium"><span>Can we contact?</span>
+          <input type="checkbox" name="GuardianContact" value="yes">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="checkbox">
+            <use xlink:href="#Checkbox-Open" class="square"></use>
+            <use xlink:href="#Checkbox-Checked" class="selected"></use>
+          </svg>
+        </label>
+      </div>
+      <div class="flex-form">
+            <label class="flex-input large"><span>Name of Caller</span>
+              <input type="text" name="callerName" class="full">
+            </label>
+            <label class="flex-input medium"><span>Caller's Relationship</span>
+              <input type="text" name="callerRelationship" class="full">
+            </label>
+            <label class="flex-input medium"><span>Caller Phone #</span>
+              <input type="tel" name="callerNumber" class="full">
+            </label>
+        <label class="flex-single-check medium"><span>Can we contact?</span>
+          <input type="checkbox" name="GuardianContact" value="yes">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="checkbox">
+            <use xlink:href="#Checkbox-Open" class="square"></use>
+            <use xlink:href="#Checkbox-Checked" class="selected"></use>
+          </svg>
+        </label>
+      </div>
+      <div class="flex-form">
+        <h3>CRISIS FACTORS</h3>
+        <label class="flex-input full-width select2-holder"><span>crisis factors</span>
+          <select multiple class="select2">
+            <option>Transition From Hospital</option>
+            <option>Waiting For Treatment</option>
+            <option>Physical Conflict Between Youth & Family</option>
+            <option>Parent/Family Homeless (in Shelter)</option>
+            <option>Parent/Family Homeless (Not in Shelter)</option>
+            <option>Parent Needs a Break</option>
+            <option>Guardian Deceased</option>
+            <option>Guardian Out of State</option>
+            <option>Guardian In Jail</option>
+            <option>Family Conflict</option>
+            <option>Runaway</option>
+            <option>Asked To Leave Home</option>
+            <option>In Between Housing</option>
+            <option>Couch Hopping</option>
+            <option>Fear of Physical Harm</option>
+            <option>Fear of Emotional Harm</option>
+          </select>
+        </label>
+      </div>
+    </form>
+    <section class="javascripts">
+      <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="js/select2.min.js"></script>
+      <script>$('select.select2').select2();</script>
+    </section>
+  </body>
+</html>
