@@ -1,0 +1,13 @@
+-var siteTitle: "Homeless Form"
+doctype html
+html(lang="en")
+  head
+    include ./includes/mixins.jade
+    include ./includes/svg.jade
+    include ./includes/head.jade
+  body
+    form
+      .flex-form
+        +singleInput("text", "half", "Name of Youth", "clientName", "We need to know the youth's name")
+        +singleInput("number", "half", "Age", "clientAge")
+        +singleInput("date", "half", "Date", "clientDOB")
