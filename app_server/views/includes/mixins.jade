@@ -1,0 +1,22 @@
+mixin singleInput(type, width, label, val, reqMsg)
+  label.flex-input(class="#{width}")
+    span= label
+    if reqMsg
+      svg.required-mark(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32")
+        use.required(xlink:href="#Field-Required")
+      input.full(type="#{type}" required title="#{reqMsg}" name="#{val}" data-parsley-trigger="change")
+    else
+      input.full(type="#{type}" name="#{val}")
+      
+mixin newOption(type, width, group, label)
+  label.toggle(class="#{width}")
+    input(type="#{type}" name="#{group}" value="#{label}")
+    if type=="radio"
+      svg.radio(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32")
+        use.circle(xlink:href="#Radio-Open")
+        use.selected(xlink:href="#Radio-Checked")
+    else if type=="checkbox"
+      svg.checkbox(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32")
+        use.square(xlink:href="#Checkbox-Open")
+        use.selected(xlink:href="#Checkbox-Checked")
+    span.toggle-label= label

@@ -1,0 +1,51 @@
+@mixin flex-container($direction:row, $wrap:wrap, $align:strech) {
+  display: -webkit-box; display: -webkit-flex; display: -moz-flex;display: -ms-flexbox; display: flex;
+  @if $direction == row-reverse {
+      -webkit-box-direction: reverse;
+      -webkit-box-orient: horizontal;
+  } @else if $direction == column {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+  } @else if $direction == column-reverse {
+      -webkit-box-direction: reverse;
+      -webkit-box-orient: vertical;
+  } @else {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+
+  // FLEX WRAP PROPERTY
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  @if $wrap == nowrap {
+      -ms-flex-wrap: none;
+  } @else { 
+      -ms-flex-wrap: $wrap; 
+  }
+  flex-wrap: $wrap;
+  
+  @if $align == flex-start { 
+    -webkit-box-align: start; -ms-flex-align: start;
+  } @else if $align == flex-end { 
+    -webkit-box-align: end; -ms-flex-align: end;
+  } @else { 
+    -webkit-box-align: $align; -ms-flex-align: $align;
+  }
+  align-items: $align;
+}
+
+@mixin flex-item($basis, $grow:1, $align:auto) {
+  @if $grow == 0 {
+    width:$basis;
+    flex-basis: $basis;
+  } @else {
+    flex-basis: $basis;
+  }
+  flex-grow: $grow;
+  flex-shrink: $grow;
+  align-self: $align;
+}
