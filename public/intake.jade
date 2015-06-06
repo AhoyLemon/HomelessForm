@@ -31,8 +31,8 @@ html(lang="en")
             use.square(xlink:href="#Checkbox-Open")
             use.selected(xlink:href="#Checkbox-Checked")
       .flex-form
-        h3 CRISIS FACTORS
-        label.flex-input.full-width.select2-holder
+        //-h3 CRISIS FACTORS
+        label.flex-input.half.select2-holder
           span crisis factors
           select(multiple).select2
             option Transition From Hospital
@@ -54,7 +54,7 @@ html(lang="en")
             //-optgroup FEELING UNSAFE
             option Fear of Physical Harm
             option Fear of Emotional Harm
-        label.flex-input.full-width.select2-holder
+        label.flex-input.half.select2-holder
           span service flags
           select(multiple).select2
             option LGBTQ
@@ -62,8 +62,31 @@ html(lang="en")
             option Latino
             option Sexually Exploited Youth (SEY)
             option Native American
-      .flex-form
-        h3 
+        label.flex-input.half.select2-holder
+          span Systems involved
+          select(multiple).select2
+            option Foster Care
+            option child protection
+            option ward of the state
+            option reservation connected
+        label.flex-input.half.select2-holder
+          span Considerations
+          select(multiple).select2
+            option previous diagnoses
+            option previous emergency shelter visits
+            option mental healh related issues
+            option sexually assaultive
+            option physically assaultive
+            option trauma experienced
+            option brain injury
+            option verbally combative
+            option recent significant trauma
+            option developmental disabilities
+            option suicidal or homicidal ideation
+            option payment concerns
+            option medical concerns
+            option chemical or alcohol issues
+            
             
     section.javascripts
       script(src="http://code.jquery.com/jquery-2.1.4.min.js")
