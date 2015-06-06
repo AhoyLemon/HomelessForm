@@ -22,11 +22,13 @@
               <input type="text" required title="We need to know the youth's name" name="clientName" data-parsley-trigger="change" class="full">
             </label>
             <label class="flex-input small"><span>Age</span>
-              <input type="number" name="clientAge" class="full">
+              <input type="text" name="clientAge" class="full">
             </label>
-            <label class="flex-input medium"><span>Date</span>
+            <label class="flex-input medium"><span>Birthdate</span>
               <input type="date" name="clientDOB" class="full">
             </label>
+      </div>
+      <div class="flex-form">
             <label class="flex-input large"><span>Guardian Name(s)</span>
               <input type="text" name="GuardianName" class="full">
             </label>
@@ -43,16 +45,53 @@
             <use xlink:href="#Checkbox-Checked" class="selected"></use>
           </svg>
         </label>
+      </div>
+      <div class="flex-form">
             <label class="flex-input large"><span>Name of Caller</span>
               <input type="text" name="callerName" class="full">
             </label>
             <label class="flex-input medium"><span>Caller's Relationship</span>
               <input type="text" name="callerRelationship" class="full">
             </label>
-            <label class="flex-input medium"><span>Caller Number</span>
+            <label class="flex-input medium"><span>Caller Phone #</span>
               <input type="tel" name="callerNumber" class="full">
             </label>
+        <label class="flex-single-check medium"><span>Can we contact?</span>
+          <input type="checkbox" name="GuardianContact" value="yes">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="checkbox">
+            <use xlink:href="#Checkbox-Open" class="square"></use>
+            <use xlink:href="#Checkbox-Checked" class="selected"></use>
+          </svg>
+        </label>
+      </div>
+      <div class="flex-form">
+        <h3>CRISIS FACTORS</h3>
+        <label class="flex-input full-width select2-holder"><span>crisis factors</span>
+          <select multiple class="select2">
+            <option>Transition From Hospital</option>
+            <option>Waiting For Treatment</option>
+            <option>Physical Conflict Between Youth & Family</option>
+            <option>Parent/Family Homeless (in Shelter)</option>
+            <option>Parent/Family Homeless (Not in Shelter)</option>
+            <option>Parent Needs a Break</option>
+            <option>Guardian Deceased</option>
+            <option>Guardian Out of State</option>
+            <option>Guardian In Jail</option>
+            <option>Family Conflict</option>
+            <option>Runaway</option>
+            <option>Asked To Leave Home</option>
+            <option>In Between Housing</option>
+            <option>Couch Hopping</option>
+            <option>Fear of Physical Harm</option>
+            <option>Fear of Emotional Harm</option>
+          </select>
+        </label>
       </div>
     </form>
+    <section class="javascripts">
+      <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="js/select2.min.js"></script>
+      <script>$('select.select2').select2();</script>
+    </section>
   </body>
 </html>

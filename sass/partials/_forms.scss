@@ -1,14 +1,14 @@
-.flex-form { @include flex-container(); max-width: 800px; margin-left: auto; margin-right: auto;
+.flex-form { @include flex-container(); max-width:1200px; margin-left: auto; margin-right: auto;
   > label { position: relative; min-height: 3em; border:1px solid $black;
     > span { position: absolute; top:0; left:0; font-size:0.8em; font-weight: $bold; padding-top: 0.5em; padding-left: 0.5em; }
   }
   .required-mark { color:red; height: 1em; width: 1em; position:absolute; top:1em; right:1em; }
+  .full-width { @include flex-item(100%); }
   .half { @include flex-item(50%); }
   
   .small { @include flex-item(100px); }
   .medium { @include flex-item(200px); }
   .large { @include flex-item(300px); }
-  
   select, input { background:transparent; border:0; position: absolute; top:0; right:0; bottom:0; left:0; width: 100%;
     &:focus { background:$focus; }
   }
@@ -22,14 +22,23 @@
   input[type="radio"] { display: none;
     
   }
-  input[type="checkbox"] { display: none;
+  input[type="checkbox"] { opacity: 0;
     ~ svg.checkbox { width:1.5em; height: 1.5em; }
     ~ svg.checkbox .selected { opacity: 0; }
     &:checked ~ svg.checkbox .selected { opacity: 1; }
+    &:focus ~ svg.checkbox * { fill:orange; }
   }
 }
 
 .flex-single-check { 
-  svg.checkbox { display: block; margin-left: auto; margin-right: auto; margin-top: 1.5em; }
+  svg.checkbox { display: block; margin-left: auto; margin-right: auto; margin-top: 1.5em; margin-bottom: .5em; }
 }
 
+.select2-holder { min-height: 5em !important; overflow: hidden;
+  .select2-container { margin-top: 1em; }
+  .select2-selection { min-height: 40px !important; border-radius: 0 !important; border:none !important; }
+  .select2-search.select2-search--inline { min-width:10em; height: 2.3em; position: relative;
+    input { background:$focus; font-size:1.5em; font-family:$font;  }
+  }
+  //.select2-search__field {  width:100% !important; }
+}

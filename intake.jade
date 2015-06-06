@@ -8,8 +8,9 @@ html(lang="en")
     form
       .flex-form
         +singleInput("text", "large", "Name of Youth", "clientName", "We need to know the youth's name")
-        +singleInput("number", "small", "Age", "clientAge")
-        +singleInput("date", "medium", "Date", "clientDOB")
+        +singleInput("text", "small", "Age", "clientAge")
+        +singleInput("date", "medium", "Birthdate", "clientDOB")
+      .flex-form
         +singleInput("text", "large", "Guardian Name(s)", "GuardianName")
         +singleInput("text", "medium", "Relationship To Youth", "GuardianRelationship")
         +singleInput("tel", "medium", "Guardian Phone #", "GuardianPhone")
@@ -19,6 +20,43 @@ html(lang="en")
           svg.checkbox(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32")
             use.square(xlink:href="#Checkbox-Open")
             use.selected(xlink:href="#Checkbox-Checked")
+      .flex-form
         +singleInput("text", "large", "Name of Caller", "callerName")
         +singleInput("text", "medium", "Caller's Relationship", "callerRelationship")
-        +singleInput("tel", "medium", "Caller Number", "callerNumber")
+        +singleInput("tel", "medium", "Caller Phone #", "callerNumber")
+        label.flex-single-check.medium
+          span Can we contact?
+          input(type="checkbox" name="GuardianContact" value="yes")
+          svg.checkbox(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32")
+            use.square(xlink:href="#Checkbox-Open")
+            use.selected(xlink:href="#Checkbox-Checked")
+      .flex-form
+        h3 CRISIS FACTORS
+        label.flex-input.full-width.select2-holder
+          span crisis factors
+          select(multiple).select2
+            option Transition From Hospital
+            option Waiting For Treatment
+            option Physical Conflict Between Youth & Family
+            //-optgroup Parent/Family Homeless
+            option Parent/Family Homeless (in Shelter)
+            option Parent/Family Homeless (Not in Shelter)
+            option Parent Needs a Break
+            option Guardian Deceased
+            option Guardian Out of State
+            option Guardian In Jail
+            option Family Conflict
+            //-optgroup Youth Not At Home
+            option Runaway
+            option Asked To Leave Home
+            option In Between Housing
+            option Couch Hopping
+            //-optgroup FEELING UNSAFE
+            option Fear of Physical Harm
+            option Fear of Emotional Harm
+            
+    section.javascripts
+      script(src="http://code.jquery.com/jquery-2.1.4.min.js")
+      script(src="js/select2.min.js")
+      script
+        | $('select.select2').select2();
