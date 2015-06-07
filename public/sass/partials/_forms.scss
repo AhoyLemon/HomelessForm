@@ -16,6 +16,9 @@
   input {
     &[type="text"], &[type="number"], &[type="date"], &[type="tel"] { font-family:$font; font-size:1.5em; padding: 1em 0.5em 0.5em 0.5em; display: block; }
   }
+  textarea { font-family:$font; font-size:1.5em; padding: 1em 0.5em 0.5em 0.5em; display: block; width:100%;
+    &:focus { background:$focus; }
+  } 
   
   svg.radio { width:2em; height: 2em; display: inline-block; }
   
@@ -43,6 +46,7 @@
       &:focus { background:$focus; }
     }
   } 
+  //.select2-container--open { background:lime; }
   .select2-selection--multiple { max-height: 40px; overflow-y: auto; }
   //.select2-search__field {  width:100% !important; }
 }
